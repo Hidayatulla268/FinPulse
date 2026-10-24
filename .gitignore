@@ -23,6 +23,8 @@
 # misc
 .DS_Store
 *.pem
+*.apk
+/android/
 
 # debug
 npm-debug.log*
