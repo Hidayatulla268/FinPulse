@@ -77,29 +77,25 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-2xl animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md animate-fadeIn">
       <div
-        className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl glass-panel-elevated glass-specular p-6 sm:p-8 shadow-2xl relative"
+        className="w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl relative text-slate-800"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Glows */}
-        <div className="absolute -top-20 -right-20 w-52 h-52 rounded-full blur-3xl bg-sky-500/20 pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-52 h-52 rounded-full blur-3xl bg-[#ff9900]/15 pointer-events-none" />
-
         {/* Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-sky-500/15">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-200">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-2xl glass-panel glass-specular text-sky-400 glow-sky-subtle">
-              <FileSpreadsheet className="w-5 h-5" />
+            <div className="p-2.5 rounded-2xl bg-cyan-50 border border-cyan-200 text-[#0284C7]">
+              <FileSpreadsheet className="w-5 h-5 text-[#0284C7]" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h2 className="text-lg font-bold text-white">Import Bank Statement (CSV)</h2>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full glass-pill border border-[#ff9900]/30 text-[#ff9900]">
+                <h2 className="text-lg font-bold text-slate-900">Import Bank Statement (CSV)</h2>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#0284C7]">
                   Auto-Parser
                 </span>
               </div>
-              <p className="text-xs text-sky-200/60 mt-0.5">
+              <p className="text-xs text-slate-500 mt-0.5">
                 Supports HDFC, ICICI, SBI, Axis, Paytm & Google Pay transaction exports
               </p>
             </div>
@@ -107,28 +103,28 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({ isOpen, onClose 
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl glass-pill text-gray-400 hover:text-white transition cursor-pointer"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* 1-Tap Sample Statements for Demo */}
-        <div className="mt-4 p-3.5 rounded-2xl glass-panel glass-specular flex flex-wrap items-center justify-between gap-2">
-          <span className="text-xs text-sky-200/80 font-medium flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-[#ff9900]" />
+        <div className="mt-4 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-2">
+          <span className="text-xs text-slate-600 font-medium flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-[#0284C7]" />
             <span>Try sample Indian bank statement instantly:</span>
           </span>
           <div className="flex gap-2">
             <button
               onClick={() => loadSample('hdfc')}
-              className="px-3 py-1 rounded-xl text-xs glass-pill border border-sky-500/30 text-sky-300 font-medium transition cursor-pointer hover:border-sky-400"
+              className="px-3 py-1 rounded-xl text-xs bg-white border border-slate-200 text-slate-700 font-medium transition cursor-pointer hover:border-cyan-300 hover:text-[#0284C7] shadow-sm"
             >
               HDFC Bank CSV
             </button>
             <button
               onClick={() => loadSample('gpay')}
-              className="px-3 py-1 rounded-xl text-xs glass-pill border border-[#ff9900]/30 text-[#ff9900] font-medium transition cursor-pointer hover:border-[#ff9900]/60"
+              className="px-3 py-1 rounded-xl text-xs bg-white border border-slate-200 text-slate-700 font-medium transition cursor-pointer hover:border-cyan-300 hover:text-[#0284C7] shadow-sm"
             >
               GPay / UPI CSV
             </button>
@@ -137,10 +133,10 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({ isOpen, onClose 
 
         {/* Drag & Drop File Upload Area */}
         <div className="mt-4">
-          <label className="flex flex-col items-center justify-center p-7 border-2 border-dashed border-sky-500/30 rounded-2xl glass-panel glass-specular hover:border-sky-400/60 transition cursor-pointer">
-            <Upload className="w-8 h-8 text-sky-400 mb-2 drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" />
-            <span className="text-sm font-semibold text-white">Click or drag & drop bank statement CSV</span>
-            <span className="text-xs text-sky-200/50 mt-1">
+          <label className="flex flex-col items-center justify-center p-7 border-2 border-dashed border-slate-300 rounded-2xl bg-slate-50 hover:bg-cyan-50/20 hover:border-cyan-400 transition cursor-pointer">
+            <Upload className="w-8 h-8 text-[#0284C7] mb-2" />
+            <span className="text-sm font-semibold text-slate-900">Click or drag & drop bank statement CSV</span>
+            <span className="text-xs text-slate-500 mt-1">
               Supports .csv files exported from your netbanking or UPI app
             </span>
             <input
@@ -154,8 +150,8 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({ isOpen, onClose 
 
         {/* Error message */}
         {errorMsg && (
-          <div className="mt-3 p-3 rounded-xl glass-panel-marigold glass-specular text-[#ff9900] text-xs flex items-center gap-2">
-            <AlertCircle className="w-4 h-4 text-[#ff9900] shrink-0" />
+          <div className="mt-3 p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
+            <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
             <span>{errorMsg}</span>
           </div>
         )}
@@ -165,30 +161,30 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({ isOpen, onClose 
           <div className="mt-5 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-sky-400" />
-                <span className="text-xs font-semibold text-white">
-                  Detected: <span className="text-sky-300">{detectedBank}</span>
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span className="text-xs font-semibold text-slate-900">
+                  Detected: <span className="text-[#0284C7]">{detectedBank}</span>
                 </span>
-                <span className="text-xs text-sky-200/60 font-mono">
+                <span className="text-xs text-slate-500 font-mono">
                   ({parsedList.length} expenses found)
                 </span>
               </div>
-              <span className="text-xs font-mono font-bold text-[#ff9900]">
+              <span className="text-xs font-mono font-bold text-slate-900">
                 Total: {formatINR(parsedList.reduce((s, t) => s + t.amount, 0))}
               </span>
             </div>
 
-            <div className="max-h-52 overflow-y-auto rounded-2xl glass-panel glass-specular divide-y divide-sky-500/10">
+            <div className="max-h-52 overflow-y-auto rounded-2xl bg-white border border-slate-200 divide-y divide-slate-100 shadow-sm">
               {parsedList.map((t, idx) => (
-                <div key={idx} className="p-3 flex items-center justify-between text-xs hover:bg-white/[0.03]">
+                <div key={idx} className="p-3 flex items-center justify-between text-xs hover:bg-slate-50">
                   <div className="flex items-center gap-2 truncate">
-                    <span className="font-mono text-sky-200/50">{t.date}</span>
-                    <span className="font-semibold text-white truncate">{t.merchant}</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full glass-pill border border-sky-500/20 text-sky-300">
+                    <span className="font-mono text-slate-400">{t.date}</span>
+                    <span className="font-semibold text-slate-900 truncate">{t.merchant}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-slate-600">
                       {t.category}
                     </span>
                   </div>
-                  <span className="font-mono font-bold text-[#ff9900] shrink-0">
+                  <span className="font-mono font-bold text-slate-900 shrink-0">
                     {formatINR(t.amount)}
                   </span>
                 </div>
@@ -198,7 +194,7 @@ export const CsvUploadModal: React.FC<CsvUploadModalProps> = ({ isOpen, onClose 
             {/* Import Button */}
             <button
               onClick={handleConfirmImport}
-              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 via-sky-300 to-[#ff9900] hover:brightness-110 text-black font-extrabold text-sm shadow-xl glow-sky-subtle transition cursor-pointer"
+              className="w-full py-3.5 rounded-2xl btn-primary-mint text-white font-extrabold text-sm shadow-lg transition cursor-pointer"
             >
               Confirm & Import {parsedList.length} Transactions to Finpulse
             </button>

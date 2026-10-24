@@ -128,44 +128,44 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
   ];
 
   return (
-    <div className="relative rounded-3xl overflow-hidden glass-panel-elevated glass-specular border border-sky-500/30 shadow-2xl p-6 sm:p-8 glow-sky-subtle">
+    <div className="relative rounded-3xl overflow-hidden glass-panel-elevated glass-specular border border-slate-200 shadow-xl p-6 sm:p-8">
       {/* Ambient background glows */}
-      <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-sky-500/15 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-[#ff9900]/12 blur-[90px] pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-80 h-80 rounded-full bg-cyan-500/8 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/3 w-72 h-72 rounded-full bg-sky-500/8 blur-[90px] pointer-events-none" />
 
       {/* Header Banner */}
-      <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-sky-500/20">
+      <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-300 text-xs font-bold mb-2">
-            <BrainCircuit className="w-4 h-4 text-[#ff9900] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-[#0284C7] text-xs font-bold mb-2">
+            <BrainCircuit className="w-4 h-4 text-[#0284C7] animate-pulse" />
             <span>Built-in Financial & Macro Intelligence (100% Offline & Private)</span>
           </div>
 
-          <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2.5">
+          <h3 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight flex items-center gap-2.5">
             <span>Finpulse AI Financial Copilot</span>
-            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-gradient-to-r from-sky-400 to-[#ff9900] text-black">
+            <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 text-white">
               NEURAL V2
             </span>
           </h3>
 
-          <p className="text-xs sm:text-sm text-gray-300 mt-1 max-w-2xl">
+          <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
             Diagnoses live bank transactions, plugs quick-commerce micro-leaks, and grounds daily allowances in real-world Indian economic benchmarks.
           </p>
         </div>
 
         {/* Health Score Pill */}
-        <div className="p-3.5 rounded-2xl glass-panel glass-specular border border-sky-400/40 glow-sky flex items-center gap-4 shrink-0">
+        <div className="p-3.5 rounded-2xl glass-panel glass-specular border border-slate-200 flex items-center gap-4 shrink-0 shadow-sm">
           <div className="relative w-12 h-12 flex items-center justify-center">
             <svg className="w-12 h-12 -rotate-90" viewBox="0 0 36 36">
               <path
-                className="text-gray-800"
+                className="text-slate-200"
                 strokeWidth="3.5"
                 stroke="currentColor"
                 fill="none"
                 d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
               />
               <path
-                className="text-sky-400 transition-all duration-1000 ease-out"
+                className="text-[#0284C7] transition-all duration-1000 ease-out"
                 strokeDasharray={`${aiAudit.healthScore}, 100`}
                 strokeWidth="3.5"
                 strokeLinecap="round"
@@ -174,15 +174,15 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
                 d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
               />
             </svg>
-            <span className="absolute font-black text-xs text-white">{aiAudit.healthScore}</span>
+            <span className="absolute font-black text-xs text-[#0F172A]">{aiAudit.healthScore}</span>
           </div>
 
           <div>
-            <div className="text-[11px] uppercase font-bold tracking-wider text-sky-400">Financial Health</div>
-            <div className="text-xs font-extrabold text-white">{aiAudit.verdict}</div>
-            <div className="text-[10px] text-gray-400 mt-0.5">
-              Runway: <strong className="text-[#ff9900]">{aiAudit.runwayMonths} Mo</strong> • Unlock:{' '}
-              <strong className="text-sky-300">+{formatINR(aiAudit.potentialMonthlySavingsINR)}/mo</strong>
+            <div className="text-[11px] uppercase font-bold tracking-wider text-[#0284C7]">Financial Health</div>
+            <div className="text-xs font-extrabold text-[#0F172A]">{aiAudit.verdict}</div>
+            <div className="text-[10px] text-slate-500 mt-0.5">
+              Runway: <strong className="text-cyan-700">{aiAudit.runwayMonths} Mo</strong> • Unlock:{' '}
+              <strong className="text-teal-700">+{formatINR(aiAudit.potentialMonthlySavingsINR)}/mo</strong>
             </div>
           </div>
         </div>
@@ -194,11 +194,11 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
           onClick={() => setActiveTab('playbook')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'playbook'
-              ? 'bg-sky-500/20 text-sky-300 border border-sky-400/40 glow-sky-subtle'
-              : 'glass-pill text-gray-400 hover:text-white'
+              ? 'bg-cyan-50 text-[#0284C7] border border-cyan-300 shadow-xs'
+              : 'glass-pill text-slate-600 hover:text-[#0F172A]'
           }`}
         >
-          <Lightbulb className="w-3.5 h-3.5 text-[#ff9900]" />
+          <Lightbulb className="w-3.5 h-3.5 text-amber-500" />
           <span>Actionable Savings Playbook ({aiAudit.suggestions.length})</span>
         </button>
 
@@ -206,11 +206,11 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
           onClick={() => setActiveTab('macro')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'macro'
-              ? 'bg-sky-500/20 text-sky-300 border border-sky-400/40 glow-sky-subtle'
-              : 'glass-pill text-gray-400 hover:text-white'
+              ? 'bg-cyan-50 text-[#0284C7] border border-cyan-300 shadow-xs'
+              : 'glass-pill text-slate-600 hover:text-[#0F172A]'
           }`}
         >
-          <Globe className="w-3.5 h-3.5 text-cyan-400" />
+          <Globe className="w-3.5 h-3.5 text-teal-600" />
           <span>India & World Macro Context ({aiAudit.macroSignals.length})</span>
         </button>
 
@@ -218,11 +218,11 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
           onClick={() => setActiveTab('chat')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
             activeTab === 'chat'
-              ? 'bg-sky-500/20 text-sky-300 border border-sky-400/40 glow-sky-subtle'
-              : 'glass-pill text-gray-400 hover:text-white'
+              ? 'bg-cyan-50 text-[#0284C7] border border-cyan-300 shadow-xs'
+              : 'glass-pill text-slate-600 hover:text-[#0F172A]'
           }`}
         >
-          <Bot className="w-3.5 h-3.5 text-sky-400" />
+          <Bot className="w-3.5 h-3.5 text-[#0284C7]" />
           <span>AI Financial Advisor (Q&A)</span>
         </button>
       </div>
@@ -234,37 +234,37 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
             {aiAudit.suggestions.map((sug) => (
               <div
                 key={sug.id}
-                className="p-5 rounded-2xl glass-panel glass-specular border border-sky-500/25 hover:border-sky-400/50 transition flex flex-col justify-between group glow-sky-subtle"
+                className="p-5 rounded-2xl glass-panel glass-specular border border-slate-200 hover:border-cyan-300 transition flex flex-col justify-between group shadow-sm"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
-                    <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-sky-500/15 border border-sky-500/30 text-sky-300">
+                    <span className="text-[10px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#0284C7]">
                       {sug.tag}
                     </span>
 
-                    <span className="text-xs font-mono font-bold text-[#ff9900] flex items-center gap-1">
-                      <Coins className="w-3 h-3" />
+                    <span className="text-xs font-mono font-bold text-teal-700 flex items-center gap-1">
+                      <Coins className="w-3 h-3 text-cyan-600" />
                       +{formatINR(sug.impactINR)}/{sug.impactPeriod === 'annual' ? 'yr' : 'mo'}
                     </span>
                   </div>
 
-                  <h4 className="text-sm font-bold text-white group-hover:text-sky-300 transition">{sug.title}</h4>
-                  <p className="text-xs text-sky-200/80 font-medium mt-1">{sug.headline}</p>
+                  <h4 className="text-sm font-bold text-[#0F172A] group-hover:text-[#0284C7] transition">{sug.title}</h4>
+                  <p className="text-xs text-slate-600 font-medium mt-1">{sug.headline}</p>
 
-                  <div className="mt-3 p-3 rounded-xl bg-black/40 border border-sky-500/15 text-xs text-gray-300 leading-relaxed">
-                    <strong className="text-white block mb-1">Recommended Action:</strong>
+                  <div className="mt-3 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed">
+                    <strong className="text-[#0F172A] block mb-1">Recommended Action:</strong>
                     {sug.action}
                   </div>
 
-                  <div className="mt-2 text-[11px] text-gray-400 flex items-start gap-1.5 italic">
-                    <Globe className="w-3 h-3 text-sky-400 shrink-0 mt-0.5" />
+                  <div className="mt-2 text-[11px] text-slate-500 flex items-start gap-1.5 italic">
+                    <Globe className="w-3 h-3 text-[#0284C7] shrink-0 mt-0.5" />
                     <span>{sug.worldContext}</span>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-sky-500/15 flex items-center justify-between">
-                  <span className="text-[11px] text-gray-500 uppercase tracking-wider font-bold">
-                    Priority: <span className="text-sky-400">{sug.priority}</span>
+                <div className="mt-4 pt-3 border-t border-slate-200 flex items-center justify-between">
+                  <span className="text-[11px] text-slate-500 uppercase tracking-wider font-bold">
+                    Priority: <span className="text-[#0284C7]">{sug.priority}</span>
                   </span>
 
                   <button
@@ -277,7 +277,7 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
                         handleSendMessage(`Tell me more about: ${sug.title}`);
                       }
                     }}
-                    className="text-xs text-sky-400 hover:text-white font-bold flex items-center gap-1 transition cursor-pointer"
+                    className="text-xs text-[#0284C7] hover:text-cyan-700 font-bold flex items-center gap-1 transition cursor-pointer"
                   >
                     <span>Execute with AI</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -292,7 +292,7 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
       {/* TAB 2: MACRO SIGNALS */}
       {activeTab === 'macro' && (
         <div className="relative z-10 mt-6 space-y-3">
-          <div className="text-xs text-gray-300 max-w-2xl mb-4">
+          <div className="text-xs text-slate-600 max-w-2xl mb-4">
             How real-world Indian and global macro-economic signals impact your monthly salary, daily allowances, and liquid wealth:
           </div>
 
@@ -302,30 +302,30 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
               return (
                 <div
                   key={idx}
-                  className="p-4 rounded-2xl glass-panel glass-specular border border-sky-500/20 hover:border-sky-400/40 transition"
+                  className="p-4 rounded-2xl glass-panel glass-specular border border-slate-200 hover:border-cyan-300 transition shadow-sm"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-500/30 text-cyan-300">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#0284C7]">
                         {signal.badge}
                       </span>
-                      <h4 className="text-sm font-bold text-white mt-2">{signal.title}</h4>
-                      <div className="text-xs font-mono font-extrabold text-[#ff9900] mt-0.5">{signal.value}</div>
+                      <h4 className="text-sm font-bold text-[#0F172A] mt-2">{signal.title}</h4>
+                      <div className="text-xs font-mono font-extrabold text-cyan-700 mt-0.5">{signal.value}</div>
                     </div>
 
                     <button
                       onClick={() => setExpandedMacroIndex(isExpanded ? null : idx)}
-                      className="p-1 rounded-lg glass-pill text-gray-400 hover:text-white transition cursor-pointer"
+                      className="p-1 rounded-lg glass-pill text-slate-500 hover:text-[#0F172A] transition cursor-pointer"
                     >
                       {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                     </button>
                   </div>
 
-                  <p className="text-xs text-gray-300 mt-2 leading-relaxed">{signal.implication}</p>
+                  <p className="text-xs text-slate-600 mt-2 leading-relaxed">{signal.implication}</p>
 
                   {isExpanded && (
-                    <div className="mt-3 p-3 rounded-xl bg-black/50 border border-sky-500/20 text-xs text-sky-200/90 animate-in fade-in duration-200">
-                      <strong className="text-white block mb-0.5">Finpulse Strategic Guidance:</strong>
+                    <div className="mt-3 p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 animate-in fade-in duration-200">
+                      <strong className="text-[#0F172A] block mb-0.5">Finpulse Strategic Guidance:</strong>
                       {signal.recommendation}
                     </div>
                   )}
@@ -338,7 +338,7 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
 
       {/* TAB 3: INTERACTIVE AI CHAT */}
       {activeTab === 'chat' && (
-        <div className="relative z-10 mt-6 flex flex-col h-[460px] rounded-2xl glass-panel border border-sky-500/25 overflow-hidden">
+        <div className="relative z-10 mt-6 flex flex-col h-[460px] rounded-2xl bg-white border border-slate-200 shadow-sm overflow-hidden">
           {/* Chat Message Stream */}
           <div className="flex-1 p-4 sm:p-5 overflow-y-auto space-y-4">
             {messages.map((m) => {
@@ -346,15 +346,15 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
               return (
                 <div key={m.id} className={`flex gap-3 ${isAi ? 'items-start' : 'items-start justify-end'}`}>
                   {isAi && (
-                    <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-[#ff9900] flex items-center justify-center text-black font-extrabold text-xs shrink-0 shadow-md">
-                      <Bot className="w-4 h-4 text-black" />
+                    <div className="w-8 h-8 rounded-xl btn-primary-mint flex items-center justify-center text-white font-extrabold text-xs shrink-0 shadow-sm">
+                      <Bot className="w-4 h-4 text-white" />
                     </div>
                   )}
 
                   <div className={`max-w-[85%] sm:max-w-[75%] rounded-2xl p-4 text-xs leading-relaxed ${
                     isAi
-                      ? 'glass-panel-elevated glass-specular border border-sky-500/30 text-gray-200 shadow-xl'
-                      : 'bg-gradient-to-r from-sky-500/30 to-[#ff9900]/25 border border-sky-400/40 text-white ml-auto'
+                      ? 'bg-slate-50 border border-slate-200 text-[#0F172A] shadow-xs'
+                      : 'bg-gradient-to-r from-cyan-600 to-teal-600 text-white ml-auto shadow-sm'
                   }`}>
                     {/* Render message body */}
                     <div className="whitespace-pre-line space-y-2">
@@ -365,11 +365,11 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
 
                     {/* Key Stats Pill Bar */}
                     {m.keyStats && m.keyStats.length > 0 && (
-                      <div className="mt-3 pt-3 border-t border-sky-500/20 flex flex-wrap gap-2">
+                      <div className="mt-3 pt-3 border-t border-slate-200 flex flex-wrap gap-2">
                         {m.keyStats.map((st, sIdx) => (
-                          <div key={sIdx} className="px-2.5 py-1 rounded-lg bg-black/40 border border-sky-500/20 text-[11px] font-mono">
-                            <span className="text-gray-400">{st.label}: </span>
-                            <span className="text-[#ff9900] font-bold">{st.value}</span>
+                          <div key={sIdx} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-[11px] font-mono shadow-xs">
+                            <span className="text-slate-500">{st.label}: </span>
+                            <span className="text-cyan-700 font-bold">{st.value}</span>
                           </div>
                         ))}
                       </div>
@@ -381,9 +381,9 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
                         {m.actionRecommendation.type === 'adjust_budget' && m.actionRecommendation.value && (
                           <button
                             onClick={() => handleApplyBudgetSuggestion(m.actionRecommendation!.value!)}
-                            className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-sky-400 via-sky-300 to-[#ff9900] text-black font-extrabold text-xs shadow-md hover:brightness-110 transition flex items-center gap-1.5 cursor-pointer"
+                            className="px-3.5 py-1.5 rounded-xl btn-primary-mint text-white font-extrabold text-xs shadow-md transition flex items-center gap-1.5 cursor-pointer"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-black" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-white" />
                             <span>{m.actionRecommendation.label} (Set ₹{m.actionRecommendation.value}/day)</span>
                           </button>
                         )}
@@ -391,7 +391,7 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
                         {m.actionRecommendation.type === 'open_passbook' && onOpenPassbook && (
                           <button
                             onClick={onOpenPassbook}
-                            className="px-3.5 py-1.5 rounded-xl bg-sky-500/20 border border-sky-400/40 text-sky-300 font-bold text-xs hover:bg-sky-500/30 transition flex items-center gap-1.5 cursor-pointer"
+                            className="px-3.5 py-1.5 rounded-xl btn-secondary-ice text-xs hover:brightness-105 transition flex items-center gap-1.5 cursor-pointer"
                           >
                             <span>Open Bank Passbook Ledger</span>
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -401,7 +401,7 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
                         {m.actionRecommendation.type === 'open_subscriptions' && onOpenSubscriptions && (
                           <button
                             onClick={onOpenSubscriptions}
-                            className="px-3.5 py-1.5 rounded-xl bg-[#ff9900]/20 border border-[#ff9900]/40 text-[#ff9900] font-bold text-xs hover:bg-[#ff9900]/30 transition flex items-center gap-1.5 cursor-pointer"
+                            className="px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-800 font-bold text-xs hover:bg-amber-100 transition flex items-center gap-1.5 cursor-pointer"
                           >
                             <span>Audit Active Subscriptions</span>
                             <ArrowRight className="w-3.5 h-3.5" />
@@ -410,11 +410,11 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
                       </div>
                     )}
 
-                    <div className="mt-2 text-[10px] text-gray-500 text-right">{m.timestamp}</div>
+                    <div className="mt-2 text-[10px] text-slate-400 text-right">{m.timestamp}</div>
                   </div>
 
                   {!isAi && (
-                    <div className="w-8 h-8 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center text-sky-300 font-bold text-xs shrink-0">
+                    <div className="w-8 h-8 rounded-xl bg-cyan-100 border border-cyan-200 flex items-center justify-center text-[#0284C7] font-bold text-xs shrink-0">
                       <User className="w-4 h-4" />
                     </div>
                   )}
@@ -424,11 +424,11 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
 
             {isAiTyping && (
               <div className="flex gap-3 items-center">
-                <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-sky-400 to-[#ff9900] flex items-center justify-center text-black shrink-0">
+                <div className="w-8 h-8 rounded-xl btn-primary-mint flex items-center justify-center text-white shrink-0">
                   <Bot className="w-4 h-4 animate-spin" />
                 </div>
-                <div className="p-3 rounded-2xl glass-panel text-xs text-sky-300 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-[#0284C7] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
                   <span>Finpulse Neural Engine computing financial advice...</span>
                 </div>
               </div>
@@ -438,13 +438,13 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
           </div>
 
           {/* Prompt Chips */}
-          <div className="px-4 py-2 border-t border-sky-500/15 bg-black/40 flex items-center gap-2 overflow-x-auto no-scrollbar">
-            <span className="text-[10px] uppercase font-bold text-gray-500 shrink-0">Suggested:</span>
+          <div className="px-4 py-2 border-t border-slate-200 bg-slate-50 flex items-center gap-2 overflow-x-auto no-scrollbar">
+            <span className="text-[10px] uppercase font-bold text-slate-500 shrink-0">Suggested:</span>
             {quickPrompts.map((q, idx) => (
               <button
                 key={idx}
                 onClick={() => handleSendMessage(q)}
-                className="px-3 py-1 rounded-full text-[11px] whitespace-nowrap glass-pill text-sky-300 hover:text-white border-sky-500/30 transition shrink-0 cursor-pointer"
+                className="px-3 py-1 rounded-full text-[11px] whitespace-nowrap glass-pill text-slate-700 hover:text-[#0284C7] transition shrink-0 cursor-pointer"
               >
                 {q}
               </button>
@@ -457,20 +457,20 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
               e.preventDefault();
               handleSendMessage();
             }}
-            className="p-3 border-t border-sky-500/20 bg-black/60 flex items-center gap-2"
+            className="p-3 border-t border-slate-200 bg-white flex items-center gap-2"
           >
             <input
               type="text"
               value={inputQuery}
               onChange={(e) => setInputQuery(e.target.value)}
               placeholder="Ask about savings, emergency funds, quick-commerce leaks, inflation..."
-              className="flex-1 glass-input rounded-xl px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none"
+              className="flex-1 glass-input rounded-xl px-4 py-2.5 text-xs text-[#0F172A] placeholder-slate-400 focus:outline-none border-slate-300"
             />
 
             <button
               type="submit"
               disabled={!inputQuery.trim() || isAiTyping}
-              className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-sky-400 via-sky-300 to-[#ff9900] text-black font-extrabold text-xs shadow-md hover:brightness-110 disabled:opacity-40 transition flex items-center gap-1.5 cursor-pointer shrink-0"
+              className="px-4 py-2.5 rounded-xl btn-primary-mint text-white font-extrabold text-xs shadow-md hover:brightness-110 disabled:opacity-40 transition flex items-center gap-1.5 cursor-pointer shrink-0"
             >
               <span>Ask AI</span>
               <Send className="w-3.5 h-3.5" />

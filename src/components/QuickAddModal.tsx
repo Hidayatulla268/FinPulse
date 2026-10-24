@@ -91,29 +91,25 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-2xl animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-md animate-fadeIn">
       <div
-        className="w-full max-w-lg rounded-3xl glass-panel-elevated glass-specular p-6 sm:p-8 shadow-2xl relative overflow-hidden text-gray-100"
+        className="w-full max-w-lg rounded-3xl bg-white border border-slate-200 p-6 sm:p-8 shadow-2xl relative overflow-hidden text-slate-800"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Glow */}
-        <div className="absolute -top-16 -right-16 w-44 h-44 rounded-full blur-3xl bg-sky-500/20 pointer-events-none" />
-        <div className="absolute -bottom-16 -left-16 w-44 h-44 rounded-full blur-3xl bg-[#ff9900]/15 pointer-events-none" />
-
         {/* Modal Header */}
-        <div className="flex items-center justify-between pb-4 border-b border-sky-500/15">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-200">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-2xl glass-panel glass-specular flex items-center justify-center text-sky-400 border border-sky-500/30">
+            <div className="w-10 h-10 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-[#0284C7]">
               <Plus className="w-5 h-5 stroke-[2.5]" />
             </div>
             <div>
-              <h2 className="text-lg font-bold text-white">Log Today&apos;s Expense</h2>
-              <p className="text-xs text-sky-200/60">Deducts instantly from your daily allowance</p>
+              <h2 className="text-lg font-bold text-slate-900">Log Today&apos;s Expense</h2>
+              <p className="text-xs text-slate-500">Deducts instantly from your daily allowance</p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl glass-pill text-gray-400 hover:text-white transition cursor-pointer"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
@@ -121,7 +117,7 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
 
         {/* Quick Indian Presets */}
         <div className="mt-4">
-          <div className="text-[11px] font-semibold uppercase tracking-wider text-sky-300/80 mb-2">
+          <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-600 mb-2">
             ⚡ Quick 1-Tap Presets
           </div>
           <div className="flex flex-wrap gap-1.5">
@@ -130,7 +126,7 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
                 key={idx}
                 type="button"
                 onClick={() => applyPreset(p)}
-                className="px-3 py-1.5 rounded-xl text-xs glass-pill border border-white/10 hover:border-sky-400/50 text-gray-300 hover:text-sky-300 transition cursor-pointer"
+                className="px-3 py-1.5 rounded-xl text-xs bg-slate-100 border border-slate-200 hover:border-cyan-300 hover:bg-cyan-50 text-slate-600 hover:text-[#0284C7] transition cursor-pointer"
               >
                 {p.label}
               </button>
@@ -142,11 +138,11 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
         <form onSubmit={handleSubmit} className="mt-5 space-y-4">
           {/* Amount Input with ₹ */}
           <div>
-            <label className="block text-xs font-medium text-sky-300/80 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Amount Spent (₹) *
             </label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-bold text-[#ff9900]">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-bold text-cyan-700">
                 ₹
               </span>
               <input
@@ -157,14 +153,14 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
                 placeholder="0"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full pl-10 pr-4 py-3.5 rounded-2xl glass-input text-2xl font-black font-mono text-white placeholder-gray-600 focus:outline-none"
+                className="w-full pl-10 pr-4 py-3.5 rounded-2xl bg-white border border-slate-300 text-2xl font-black font-mono text-slate-900 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
               />
             </div>
           </div>
 
           {/* Merchant / Description with Auto-Detection */}
           <div>
-            <label className="block text-xs font-medium text-sky-300/80 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Merchant / Description *
             </label>
             <input
@@ -173,13 +169,13 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
               placeholder="e.g. Swiggy, Zepto, Chai Tapri, Auto, Starbucks"
               value={title}
               onChange={(e) => handleTitleChange(e.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl glass-input text-sm text-white placeholder-gray-500 focus:outline-none"
+              className="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
             />
           </div>
 
           {/* Category Selector */}
           <div>
-            <label className="block text-xs font-medium text-sky-300/80 mb-1.5">
+            <label className="block text-xs font-semibold text-slate-700 mb-1.5">
               Category
             </label>
             <div className="grid grid-cols-3 gap-1.5">
@@ -190,12 +186,12 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
                   onClick={() => setCategory(cat.id)}
                   className={`px-2.5 py-2 rounded-xl text-xs font-medium border text-left transition cursor-pointer flex flex-col gap-0.5 ${
                     category === cat.id
-                      ? 'glass-panel-elevated glass-specular border-sky-400/60 text-sky-300'
-                      : 'glass-panel text-gray-400 hover:text-gray-200'
+                      ? 'bg-cyan-50 border-cyan-400 text-[#0284C7] font-semibold shadow-sm'
+                      : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-50'
                   }`}
                 >
                   <span className="truncate">{cat.label}</span>
-                  <span className="text-[10px] text-gray-500">{cat.hindiLabel}</span>
+                  <span className="text-[10px] text-slate-400">{cat.hindiLabel}</span>
                 </button>
               ))}
             </div>
@@ -204,52 +200,52 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
           {/* Payment Mode & UPI App */}
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-medium text-sky-300/80 mb-1.5">
+              <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                 Payment Mode
               </label>
               <select
                 value={paymentMode}
                 onChange={(e) => setPaymentMode(e.target.value as PaymentMode)}
-                className="w-full px-3 py-2 rounded-xl glass-input text-xs text-white focus:outline-none"
+                className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
               >
-                <option value="UPI" className="bg-black text-white">UPI (GPay / PhonePe / Paytm)</option>
-                <option value="Credit Card" className="bg-black text-white">Credit Card</option>
-                <option value="Debit Card" className="bg-black text-white">Debit Card</option>
-                <option value="NetBanking" className="bg-black text-white">NetBanking</option>
-                <option value="Cash" className="bg-black text-white">Cash</option>
+                <option value="UPI">UPI (GPay / PhonePe / Paytm)</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="NetBanking">NetBanking</option>
+                <option value="Cash">Cash</option>
               </select>
             </div>
 
             {paymentMode === 'UPI' && (
               <div>
-                <label className="block text-xs font-medium text-sky-300/80 mb-1.5">
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">
                   UPI App
                 </label>
                 <select
                   value={upiApp}
                   onChange={(e) => setUpiApp(e.target.value as UpiApp)}
-                  className="w-full px-3 py-2 rounded-xl glass-input text-xs text-white focus:outline-none"
+                  className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs text-slate-900 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
                 >
-                  <option value="GPay" className="bg-black text-white">Google Pay (GPay)</option>
-                  <option value="PhonePe" className="bg-black text-white">PhonePe</option>
-                  <option value="Paytm" className="bg-black text-white">Paytm</option>
-                  <option value="CRED" className="bg-black text-white">CRED UPI</option>
-                  <option value="BHIM" className="bg-black text-white">BHIM UPI</option>
-                  <option value="Other" className="bg-black text-white">Other Bank UPI</option>
+                  <option value="GPay">Google Pay (GPay)</option>
+                  <option value="PhonePe">PhonePe</option>
+                  <option value="Paytm">Paytm</option>
+                  <option value="CRED">CRED UPI</option>
+                  <option value="BHIM">BHIM UPI</option>
+                  <option value="Other">Other Bank UPI</option>
                 </select>
               </div>
             )}
           </div>
 
           {/* Impulsive Buy Toggle */}
-          <div className="p-3 rounded-2xl glass-panel-marigold glass-specular flex items-center justify-between cursor-pointer">
+          <div className="p-3 rounded-2xl bg-amber-50/80 border border-amber-200 flex items-center justify-between cursor-pointer">
             <div className="flex items-center gap-2">
-              <Flame className="w-4 h-4 text-[#ff9900]" />
+              <Flame className="w-4 h-4 text-amber-600" />
               <div>
-                <div className="text-xs font-bold text-[#ff9900]">
+                <div className="text-xs font-bold text-amber-800">
                   Impulse Buy / Guilty Pleasure?
                 </div>
-                <div className="text-[10px] text-gray-400">
+                <div className="text-[10px] text-slate-500">
                   Helps flag impulsive late night cravings and Zepto/Swiggy traps
                 </div>
               </div>
@@ -258,7 +254,7 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
               type="checkbox"
               checked={isImpulse}
               onChange={(e) => setIsImpulse(e.target.checked)}
-              className="w-5 h-5 rounded text-[#ff9900] focus:ring-[#ff9900] bg-black/60 border-[#ff9900]/40 cursor-pointer"
+              className="w-5 h-5 rounded text-cyan-600 focus:ring-cyan-500 bg-white border-slate-300 cursor-pointer"
             />
           </div>
 
@@ -269,7 +265,7 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
               placeholder="Optional note (e.g. split with Rahul)"
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl glass-input text-xs text-white placeholder-gray-500 focus:outline-none"
+              className="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20"
             />
           </div>
 
@@ -277,7 +273,7 @@ export const QuickAddModal: React.FC<QuickAddModalProps> = ({ isOpen, onClose })
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 via-sky-300 to-[#ff9900] hover:brightness-110 text-black font-extrabold text-sm shadow-xl glow-sky-subtle transition transform active:scale-[0.99] cursor-pointer"
+              className="w-full py-3.5 rounded-2xl btn-primary-mint text-white font-extrabold text-sm shadow-md transition transform active:scale-[0.99] cursor-pointer"
             >
               Add Expense & Deduct from Allowance
             </button>

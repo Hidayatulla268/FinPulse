@@ -10,6 +10,9 @@
     "test": "npx tsx --test tests/security.test.mjs tests/finpulseAI.test.mjs tests/bankIntelligence.test.mjs"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
     "canvas-confetti": "^1.9.4",
     "chart.js": "^4.5.1",
     "lucide-react": "^1.61.0",

@@ -1,101 +1,94 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #f0f9ff;
-  --card-bg: rgba(6, 12, 26, 0.5);
-  --card-border: rgba(56, 189, 248, 0.22);
-  --accent-sky: #38bdf8;
-  --accent-marigold: #ff9900;
-  --accent-marigold-gold: #f59e0b;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --primary-cta: #06b6d4;
+  --primary-cta-hover: #0891b2;
+  --secondary-active: #0284c7;
+  --neutral-border: #e2e8f0;
+  --accent-cyan: #06b6d4;
+  --accent-ice-blue: #0284c7;
+  --accent-teal: #0d9488;
+  --accent-slate: #64748b;
+  --neutral-soft: #f1f5f9;
 }
 
 body {
-  background-color: #000000;
-  color: #f0f9ff;
+  background-color: #f8fafc;
+  color: #0f172a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
 /* =========================================================================
-   MASTERCLASS GLASSMORPHISM DESIGN SYSTEM
-   Pure black canvas with optical frosted glass, refractive borders & glows
+   LIGHT FINTECH DESIGN SYSTEM
+   Surface: Light-Off White (#F8FAFC)
+   Containers: Pure White (#FFFFFF)
+   Primary CTA: Mint Cyan (#06B6D4 / #0D9488)
+   Secondary / Active Text: Bright Ice Blue (#0284C7)
+   Neutral Border / Divider: Soft Slate (#E2E8F0)
    ========================================================================= */
 
-/* Primary Translucent Frosted Glass Panel */
+/* Primary Container: Pure White with Soft Slate Border & Refined Elevation */
 .glass-panel {
-  background: linear-gradient(135deg, rgba(8, 16, 32, 0.6) 0%, rgba(4, 8, 18, 0.45) 50%, rgba(18, 12, 4, 0.35) 100%);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(56, 189, 248, 0.2);
-  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.8),
-              inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
-              inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05),
+              0 2px 6px -1px rgba(15, 23, 42, 0.02);
   position: relative;
 }
 
-/* Elevated Glass (Modals, Featured Hero Cards) with deep blur & double rim */
+/* Elevated Container (Modals, Featured Hero Cards, Vaults) */
 .glass-panel-elevated {
-  background: linear-gradient(145deg, rgba(12, 22, 44, 0.72) 0%, rgba(6, 12, 24, 0.58) 50%, rgba(20, 14, 4, 0.45) 100%);
-  backdrop-filter: blur(40px) saturate(210%);
-  -webkit-backdrop-filter: blur(40px) saturate(210%);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.9),
-              0 0 35px -5px rgba(56, 189, 248, 0.15),
-              inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.22),
-              inset 0 -1px 1px 0 rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.08),
+              0 4px 12px -2px rgba(15, 23, 42, 0.03);
   position: relative;
 }
 
-/* Warm Marigold Infused Frosted Glass (For Warnings, Quick Commerce, Alerts) */
+/* Warm Alert Container (For Warnings, Quick Commerce Radar, Alerts) */
 .glass-panel-marigold {
-  background: linear-gradient(135deg, rgba(28, 16, 4, 0.65) 0%, rgba(16, 9, 2, 0.5) 50%, rgba(8, 16, 32, 0.35) 100%);
-  backdrop-filter: blur(28px) saturate(190%);
-  -webkit-backdrop-filter: blur(28px) saturate(190%);
-  border: 1px solid rgba(255, 153, 0, 0.35);
-  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.8),
-              0 0 25px -5px rgba(255, 153, 0, 0.15),
-              inset 0 1px 1px 0 rgba(255, 220, 160, 0.25),
-              inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  box-shadow: 0 4px 20px -2px rgba(245, 158, 11, 0.08);
   position: relative;
 }
 
-/* Glass Pill Buttons & Badges */
+/* Neutral Pill Buttons & Badges with Soft Slate Border */
 .glass-pill {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
-              0 4px 16px -2px rgba(0, 0, 0, 0.4);
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-pill:hover {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25),
-              0 0 15px rgba(56, 189, 248, 0.25);
+  background: #e2e8f0;
+  color: #0284c7;
+  border-color: #cbd5e1;
 }
 
-/* Glass Inputs & Selects */
+/* Pure White Form Inputs & Selects with Soft Slate Border */
 .glass-input {
-  background: rgba(6, 12, 24, 0.55);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(56, 189, 248, 0.25);
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.6),
-              inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  box-shadow: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
 }
 
 .glass-input:focus {
-  border-color: rgba(56, 189, 248, 0.6);
-  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.6),
-              0 0 20px -2px rgba(56, 189, 248, 0.35);
+  border-color: #06b6d4;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.18);
 }
 
-/* Specular Reflection Rim Highlight on Glass Tops */
+/* Specular Top Rim Highlight */
 .glass-specular::before {
   content: '';
   position: absolute;
@@ -105,78 +98,107 @@ body {
   height: 1px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(56, 189, 248, 0.4) 30%, 
-    rgba(255, 255, 255, 0.6) 50%, 
-    rgba(255, 153, 0, 0.4) 70%, 
+    rgba(6, 182, 212, 0.4) 30%, 
+    rgba(2, 132, 199, 0.5) 50%, 
+    rgba(6, 182, 212, 0.4) 70%, 
     transparent 100%
   );
   pointer-events: none;
   z-index: 2;
 }
 
-/* Glass Refraction Inner Shimmer */
-.glass-shimmer {
-  position: relative;
-  overflow: hidden;
+/* Primary CTA Button: Mint Cyan */
+.btn-primary-mint {
+  background: linear-gradient(135deg, #06b6d4 0%, #0d9488 100%);
+  color: #ffffff;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px 0 rgba(6, 182, 212, 0.35);
 }
 
-.glass-shimmer::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
-  pointer-events: none;
+.btn-primary-mint:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 6px 20px 0 rgba(6, 182, 212, 0.45);
 }
 
-/* Sky Blue and Marigold Glow Effects */
+/* Secondary Button: Ice Blue */
+.btn-secondary-ice {
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  color: #0284c7;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-ice:hover {
+  background: #e0f2fe;
+  border-color: #7dd3fc;
+  color: #0369a1;
+}
+
+/* Secondary / Active Text Utility */
+.text-ice-blue {
+  color: #0284c7;
+}
+
+/* Glow Effects */
+.glow-mint {
+  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.35);
+}
+
+.glow-mint-subtle {
+  box-shadow: 0 4px 15px -2px rgba(6, 182, 212, 0.2);
+}
+
+.glow-ice {
+  box-shadow: 0 0 25px -4px rgba(2, 132, 199, 0.35);
+}
+
+.glow-ice-subtle {
+  box-shadow: 0 4px 15px -2px rgba(2, 132, 199, 0.18);
+}
+
 .glow-sky {
-  box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 25px -4px rgba(2, 132, 199, 0.3);
 }
 
 .glow-sky-subtle {
-  box-shadow: 0 0 20px -3px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 4px 15px -2px rgba(2, 132, 199, 0.15);
 }
 
 .glow-marigold {
-  box-shadow: 0 0 35px -5px rgba(255, 153, 0, 0.45);
+  box-shadow: 0 0 25px -4px rgba(245, 158, 11, 0.35);
 }
 
 .glow-marigold-subtle {
-  box-shadow: 0 0 20px -3px rgba(255, 153, 0, 0.25);
+  box-shadow: 0 4px 15px -2px rgba(245, 158, 11, 0.15);
 }
 
-.glow-sky-marigold {
-  box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.3), 0 0 45px -8px rgba(255, 153, 0, 0.25);
-}
-
-/* Custom modern scrollbar */
+/* Custom modern scrollbar for light-off white surface */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #000000;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(56, 189, 248, 0.25);
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 153, 0, 0.45);
+  background: #06b6d4;
 }
 
-/* Pulse animation for live banking stream & overspent state */
+/* Subtle animation states */
 @keyframes subtle-pulse {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
   }
   50% {
-    opacity: 0.65;
-    transform: scale(0.985);
+    opacity: 0.75;
+    transform: scale(0.99);
   }
 }
 
@@ -187,15 +209,15 @@ body {
 @keyframes marigold-ping {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 153, 0, 0.7);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(255, 153, 0, 0);
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 153, 0, 0);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
   }
 }
 
@@ -203,13 +225,13 @@ body {
   animation: marigold-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* Floating background mesh orbs for optical refraction */
+/* Floating background mesh orbs for light-off white optical ambiance */
 @keyframes float-ambient-1 {
   0%, 100% {
     transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(40px, -30px) scale(1.08);
+    transform: translate(30px, -20px) scale(1.05);
   }
 }
 
@@ -218,7 +240,7 @@ body {
     transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(-35px, 35px) scale(1.12);
+    transform: translate(-25px, 25px) scale(1.08);
   }
 }
 
@@ -227,7 +249,7 @@ body {
     transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(25px, 25px) scale(0.92);
+    transform: translate(20px, 20px) scale(0.95);
   }
 }
 
@@ -245,16 +267,16 @@ body {
 
 /* =========================================================================
    OPTICAL SEAM BLUR & FEATHER MASK UTILITIES
-   Eliminates sharp separation lines and creates fluid frosted transitions
+   Eliminates sharp separation lines and creates fluid transitions in light theme
    ========================================================================= */
 
-/* Desktop feather mask: shifted further to the left edge for seamless transition */
+/* Desktop feather mask */
 .hero-image-mask-desktop {
   mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 8%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.9) 45%, black 70%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 8%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.9) 45%, black 70%);
 }
 
-/* Mobile feather mask: soft vertical alpha gradient on the top edge */
+/* Mobile feather mask */
 .hero-image-mask-mobile {
   mask-image: linear-gradient(to bottom, transparent 0%, transparent 10%, rgba(0, 0, 0, 0.12) 25%, rgba(0, 0, 0, 0.65) 55%, black 85%);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 10%, rgba(0, 0, 0, 0.12) 25%, rgba(0, 0, 0, 0.65) 55%, black 85%);
@@ -276,4 +298,3 @@ body {
   will-change: filter, transform;
   transform: translateZ(0);
 }
-
