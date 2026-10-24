@@ -1,7 +1,11 @@
 # Finpulse 🇮🇳
 ### Real-Time Daily Budgeting, Burn Pace & Live Banking for India
 
-Finpulse is a personal finance web application tailored specifically for the Indian market. It converts monthly salary (e.g. ₹1,00,000) into a realistic daily spending allowance (₹3,333/day), tracks live UPI expenses, auto-detects Zepto and Blinkit impulse leaks, and sends an automated 9 PM nightly financial report.
+<p align="center">
+  <img src="public/thumbnail.jpg" alt="Finpulse Project Thumbnail" width="100%" style="border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);" />
+</p>
+
+Finpulse is a personal finance application tailored specifically for the Indian market. It converts monthly salary (e.g. ₹1,00,000) into a realistic daily spending allowance (₹3,333/day), tracks live UPI expenses, auto-detects Zepto and Blinkit impulse leaks, and sends an automated 9 PM nightly financial report.
 
 ---
 
