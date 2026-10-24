@@ -12,10 +12,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: "#059669",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata: Metadata = {
   title: "Finpulse • Smart Daily Budgeting & Real-Time Banking for India",
   description:
     "Convert your monthly salary into a real-time daily spending allowance. Auto-categorize UPI & bank statements, curb Zepto/Blinkit impulse leaks, and receive your 9 PM financial verdict.",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Finpulse",
+  },
+  icons: {
+    icon: "/logo.jpg",
+    apple: "/logo.jpg",
+  },
   keywords: [
     "personal finance India",
     "daily budget calculator",
