@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 *.apk
+!/finpulse.apk
 /android/
 
 # debug
