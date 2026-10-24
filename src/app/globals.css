@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #f0f9ff;
+  --card-bg: rgba(6, 12, 26, 0.5);
+  --card-border: rgba(56, 189, 248, 0.22);
+  --accent-sky: #38bdf8;
+  --accent-marigold: #ff9900;
+  --accent-marigold-gold: #f59e0b;
+}
+
+body {
+  background-color: #000000;
+  color: #f0f9ff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* =========================================================================
+   MASTERCLASS GLASSMORPHISM DESIGN SYSTEM
+   Pure black canvas with optical frosted glass, refractive borders & glows
+   ========================================================================= */
+
+/* Primary Translucent Frosted Glass Panel */
+.glass-panel {
+  background: linear-gradient(135deg, rgba(8, 16, 32, 0.6) 0%, rgba(4, 8, 18, 0.45) 50%, rgba(18, 12, 4, 0.35) 100%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.8),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+              inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Elevated Glass (Modals, Featured Hero Cards) with deep blur & double rim */
+.glass-panel-elevated {
+  background: linear-gradient(145deg, rgba(12, 22, 44, 0.72) 0%, rgba(6, 12, 24, 0.58) 50%, rgba(20, 14, 4, 0.45) 100%);
+  backdrop-filter: blur(40px) saturate(210%);
+  -webkit-backdrop-filter: blur(40px) saturate(210%);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 25px 65px -12px rgba(0, 0, 0, 0.9),
+              0 0 35px -5px rgba(56, 189, 248, 0.15),
+              inset 0 1.5px 1.5px 0 rgba(255, 255, 255, 0.22),
+              inset 0 -1px 1px 0 rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+/* Warm Marigold Infused Frosted Glass (For Warnings, Quick Commerce, Alerts) */
+.glass-panel-marigold {
+  background: linear-gradient(135deg, rgba(28, 16, 4, 0.65) 0%, rgba(16, 9, 2, 0.5) 50%, rgba(8, 16, 32, 0.35) 100%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 153, 0, 0.35);
+  box-shadow: 0 12px 36px -8px rgba(0, 0, 0, 0.8),
+              0 0 25px -5px rgba(255, 153, 0, 0.15),
+              inset 0 1px 1px 0 rgba(255, 220, 160, 0.25),
+              inset 0 -1px 1px 0 rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Glass Pill Buttons & Badges */
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.18),
+              0 4px 16px -2px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-pill:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.25),
+              0 0 15px rgba(56, 189, 248, 0.25);
+}
+
+/* Glass Inputs & Selects */
+.glass-input {
+  background: rgba(6, 12, 24, 0.55);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.6),
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-input:focus {
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.6),
+              0 0 20px -2px rgba(56, 189, 248, 0.35);
+}
+
+/* Specular Reflection Rim Highlight on Glass Tops */
+.glass-specular::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(56, 189, 248, 0.4) 30%, 
+    rgba(255, 255, 255, 0.6) 50%, 
+    rgba(255, 153, 0, 0.4) 70%, 
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Glass Refraction Inner Shimmer */
+.glass-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Sky Blue and Marigold Glow Effects */
+.glow-sky {
+  box-shadow: 0 0 35px -5px rgba(56, 189, 248, 0.45);
+}
+
+.glow-sky-subtle {
+  box-shadow: 0 0 20px -3px rgba(56, 189, 248, 0.25);
+}
+
+.glow-marigold {
+  box-shadow: 0 0 35px -5px rgba(255, 153, 0, 0.45);
+}
+
+.glow-marigold-subtle {
+  box-shadow: 0 0 20px -3px rgba(255, 153, 0, 0.25);
+}
+
+.glow-sky-marigold {
+  box-shadow: 0 0 30px -5px rgba(56, 189, 248, 0.3), 0 0 45px -8px rgba(255, 153, 0, 0.25);
+}
+
+/* Custom modern scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 153, 0, 0.45);
+}
+
+/* Pulse animation for live banking stream & overspent state */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(0.985);
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes marigold-ping {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 153, 0, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 153, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 153, 0, 0);
+  }
+}
+
+.animate-marigold-ping {
+  animation: marigold-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Floating background mesh orbs for optical refraction */
+@keyframes float-ambient-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, -30px) scale(1.08);
+  }
+}
+
+@keyframes float-ambient-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-35px, 35px) scale(1.12);
+  }
+}
+
+@keyframes float-ambient-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(25px, 25px) scale(0.92);
+  }
+}
+
+.animate-float-1 {
+  animation: float-ambient-1 14s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-ambient-2 18s ease-in-out infinite;
+}
+
+.animate-float-3 {
+  animation: float-ambient-3 12s ease-in-out infinite;
+}
+
+/* =========================================================================
+   OPTICAL SEAM BLUR & FEATHER MASK UTILITIES
+   Eliminates sharp separation lines and creates fluid frosted transitions
+   ========================================================================= */
+
+/* Desktop feather mask: shifted further to the left edge for seamless transition */
+.hero-image-mask-desktop {
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 8%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.9) 45%, black 70%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.1) 8%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0.9) 45%, black 70%);
+}
+
+/* Mobile feather mask: soft vertical alpha gradient on the top edge */
+.hero-image-mask-mobile {
+  mask-image: linear-gradient(to bottom, transparent 0%, transparent 10%, rgba(0, 0, 0, 0.12) 25%, rgba(0, 0, 0, 0.65) 55%, black 85%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, transparent 10%, rgba(0, 0, 0, 0.12) 25%, rgba(0, 0, 0, 0.65) 55%, black 85%);
+}
+
+/* Wide joining seam blur mask */
+.seam-blur-mask-h {
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+
+.seam-blur-mask-v {
+  mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 75%, transparent 100%);
+}
+
+/* Hardware accelerated smooth blur transition */
+.smooth-scroll-blur {
+  will-change: filter, transform;
+  transform: translateZ(0);
+}
+
