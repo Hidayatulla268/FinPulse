@@ -189,7 +189,7 @@ export const FinpulseAICopilot: React.FC<FinpulseAICopilotProps> = ({
       </div>
 
       {/* Tabs */}
-      <div className="relative z-10 flex items-center gap-2 mt-5">
+      <div className="relative z-10 flex items-center gap-2 mt-5 overflow-x-auto pb-1.5 no-scrollbar touch-scroll">
         <button
           onClick={() => setActiveTab('playbook')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 cursor-pointer ${

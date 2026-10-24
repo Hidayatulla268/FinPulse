@@ -233,7 +233,7 @@ export const AnalyticsCharts: React.FC = () => {
       {/* 7-Day Allowance Pacing Chart */}
       <div className="lg:col-span-7 rounded-3xl glass-panel-elevated glass-specular p-6 border border-slate-200 shadow-xl flex flex-col justify-between">
         <div>
-          <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-slate-200 gap-2">
             <div className="flex items-center gap-2">
               <div className="p-2 rounded-xl bg-cyan-50 border border-cyan-200 text-[#0284C7] shadow-xs">
                 <BarChart3 className="w-4 h-4" />

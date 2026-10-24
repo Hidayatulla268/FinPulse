@@ -151,7 +151,7 @@ export const DailyAllowanceCard: React.FC<DailyAllowanceCardProps> = ({
 
           <div className="mt-2 flex items-baseline gap-3">
             <div
-              className={`text-5xl sm:text-6xl font-black tracking-tight font-mono transition-colors duration-300 ${
+              className={`text-4xl sm:text-6xl font-black tracking-tight font-mono transition-colors duration-300 ${
                 isOverspentToday
                   ? 'text-red-600'
                   : todayPacePercent > 80

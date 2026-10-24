@@ -207,11 +207,14 @@ export const BankPassbookModal: React.FC<BankPassbookModalProps> = ({ isOpen, on
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-900/40 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-4xl max-h-[92vh] flex flex-col rounded-3xl bg-white border border-slate-200 shadow-2xl overflow-hidden text-slate-800">
+    <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-5 bg-slate-900/40 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-4xl max-h-[94vh] sm:max-h-[92vh] flex flex-col rounded-t-[32px] sm:rounded-3xl glass-panel-elevated shadow-2xl overflow-hidden text-slate-800">
+        
+        {/* Mobile Drag Indicator */}
+        <div className="w-12 h-1.5 rounded-full bg-slate-300 mx-auto mt-3 mb-1 sm:hidden" />
         
         {/* Top Header */}
-        <div className="relative px-6 py-5 border-b border-slate-200 bg-white flex flex-wrap items-center justify-between gap-4">
+        <div className="relative px-5 sm:px-6 py-4 sm:py-5 border-b border-slate-200 bg-white/95 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-[#0284C7] shadow-sm">
               <Building2 className="w-6 h-6 text-[#0284C7]" />

@@ -116,7 +116,7 @@ export const TransactionList: React.FC<TransactionListProps> = ({ onOpenQuickAdd
         </div>
 
         {/* Category Pill Filter */}
-        <div className="w-full sm:w-auto flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+        <div className="w-full sm:w-auto flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 no-scrollbar touch-scroll">
           <button
             onClick={() => setSelectedCategory('all')}
             className={`px-2.5 py-1.5 rounded-xl text-xs whitespace-nowrap border transition cursor-pointer ${

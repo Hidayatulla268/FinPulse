@@ -66,7 +66,7 @@ export const SettingsDrawer: React.FC<SettingsDrawerProps> = ({ isOpen, onClose 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-end bg-slate-900/40 backdrop-blur-md animate-fadeIn">
       <div
-        className="w-full max-w-md h-full bg-white border-l border-slate-200 p-6 sm:p-7 overflow-y-auto shadow-2xl relative flex flex-col justify-between text-slate-800"
+        className="w-full max-w-md h-full bg-white/95 sm:bg-white/90 backdrop-blur-2xl border-l border-slate-200/90 p-5 sm:p-7 overflow-y-auto shadow-2xl relative flex flex-col justify-between text-slate-800"
         onClick={(e) => e.stopPropagation()}
       >
         <div>

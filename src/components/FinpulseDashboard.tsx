@@ -22,6 +22,7 @@ import { DailyAllowanceCard } from '@/components/DailyAllowanceCard';
 import { FinpulseAICopilot } from '@/components/FinpulseAICopilot';
 import { Header } from '@/components/Header';
 import { MerchantInsightsModal } from '@/components/MerchantInsightsModal';
+import { MobileBottomNav } from '@/components/MobileBottomNav';
 import { NightlyReportModal } from '@/components/NightlyReportModal';
 import { QuickAddModal } from '@/components/QuickAddModal';
 import { SettingsDrawer } from '@/components/SettingsDrawer';
@@ -103,14 +104,14 @@ function DashboardContent() {
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#0F172A] flex flex-col selection:bg-cyan-500 selection:text-white relative overflow-x-hidden">
-      {/* Ambient Optical Light Field (Soft subtle glows for light-off white surface) */}
+      {/* Ambient Liquid Optical Light Field (Liquid glassy refractions behind translucent cards) */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-cyan-500/10 blur-[130px] animate-float-1" />
-        <div className="absolute top-1/4 -right-32 w-[650px] h-[650px] rounded-full bg-sky-500/10 blur-[140px] animate-float-2" />
-        <div className="absolute top-2/3 left-1/4 w-[520px] h-[520px] rounded-full bg-teal-500/8 blur-[120px] animate-float-3" />
-        <div className="absolute -bottom-32 right-1/4 w-[700px] h-[700px] rounded-full bg-cyan-600/8 blur-[150px] animate-float-1" />
-        {/* Subtle dot pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(148,163,184,0.18)_1px,transparent_1px)] [background-size:28px_28px] opacity-70" />
+        <div className="absolute -top-32 -left-32 w-[650px] h-[650px] rounded-full bg-gradient-to-br from-cyan-400/18 to-sky-300/15 blur-[140px] animate-float-1" />
+        <div className="absolute top-1/4 -right-32 w-[680px] h-[680px] rounded-full bg-gradient-to-bl from-teal-400/15 to-emerald-300/12 blur-[150px] animate-float-2" />
+        <div className="absolute top-2/3 left-1/4 w-[540px] h-[540px] rounded-full bg-gradient-to-tr from-sky-400/15 to-cyan-300/12 blur-[130px] animate-float-3" />
+        <div className="absolute -bottom-32 right-1/4 w-[720px] h-[720px] rounded-full bg-gradient-to-tl from-cyan-500/14 to-teal-400/12 blur-[160px] animate-float-1" />
+        {/* Subtle high-end mesh dot matrix */}
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(148,163,184,0.18)_1px,transparent_1px)] [background-size:28px_28px] opacity-65" />
       </div>
 
       {/* Sticky Header with Dynamic Scroll Sheen & Specular Progress */}
@@ -184,7 +185,7 @@ function DashboardContent() {
       )}
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 sm:space-y-8 relative z-10">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 space-y-5 sm:space-y-8 relative z-10 pb-28 sm:pb-12">
         {/* Hero Showcase Banner in Pure White Card with Seamless Light Gradient */}
         <div className="relative rounded-3xl overflow-hidden glass-panel-elevated glass-specular border border-slate-200 shadow-xl group glow-mint-subtle min-h-[380px] lg:min-h-[440px] flex flex-col justify-center">
           {/* Ambient Diffused Glow Orbs behind the joint */}
@@ -456,6 +457,15 @@ function DashboardContent() {
           </div>
         </div>
       </footer>
+
+      {/* Mobile Liquid Glass Bottom Navigation Dock */}
+      <MobileBottomNav
+        onOpenQuickAdd={() => setIsQuickAddOpen(true)}
+        onOpenBankPassbook={() => setIsBankPassbookOpen(true)}
+        onOpenAiAdvisor={scrollToAiCopilot}
+        onOpenNightlyReport={() => setIsNightlyReportOpen(true)}
+        onOpenSettings={() => setIsSettingsOpen(true)}
+      />
 
       {/* Modals & Drawers */}
       <QuickAddModal

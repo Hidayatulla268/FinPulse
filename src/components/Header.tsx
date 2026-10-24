@@ -133,114 +133,135 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Navigation & Action Buttons */}
-          <div className="flex items-center flex-wrap gap-2 w-full sm:w-auto justify-end">
-            {/* Desktop IST Time Pill */}
-            <div className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-pill text-xs font-mono text-slate-600">
-              <Clock className="w-3.5 h-3.5 text-cyan-600 animate-pulse" />
-              <span>{timeStr || 'IST'}</span>
-            </div>
-
-            {/* Bank Passbook & Account Vault Button */}
+          <div className="flex items-center gap-2">
+            {/* Mobile Fast Action: Balance Badge & Settings Cog */}
             <button
               onClick={onOpenBankPassbook}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl btn-secondary-ice text-xs font-semibold transition cursor-pointer shadow-sm hover:scale-105"
-              title="View bank ledger, all stored transactions, and real-time bank stream"
+              className="sm:hidden flex items-center gap-1.5 px-2.5 py-1 rounded-xl btn-secondary-ice text-xs font-semibold shadow-xs"
             >
-              <div className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
-              <Building2 className="w-3.5 h-3.5 text-[#0284C7]" />
-              <span className="font-bold text-[#0F172A] hidden sm:inline">{activeAccount ? activeAccount.bankName : 'Passbook'}</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-ping" />
               <span className="text-cyan-700 font-mono text-[11px] font-bold">
                 {formatINR(totalLiquidBalance)}
               </span>
             </button>
 
-            {/* Built-in AI Advisor */}
-            {onOpenAiAdvisor && (
-              <button
-                onClick={onOpenAiAdvisor}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl btn-secondary-ice text-xs font-bold transition cursor-pointer shadow-sm hover:scale-105"
-                title="Built-in AI Financial & World Copilot"
-              >
-                <BrainCircuit className="w-3.5 h-3.5 text-[#0284C7] animate-pulse" />
-                <span className="hidden md:inline">Finpulse AI</span>
-                <span className="md:hidden">AI</span>
-              </button>
-            )}
-
-            {/* Bank Auto-Sync modal */}
-            <button
-              onClick={onOpenAutoBankSync}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-slate-700 text-xs font-medium transition cursor-pointer hover:text-[#0284C7]"
-              title="Automatically poll bank accounts & parse transactional SMS"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
-              <span>Auto-Sync</span>
-            </button>
-
-            {/* Quick commerce & Impulsive insights */}
-            <button
-              onClick={onOpenMerchantInsights}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-amber-700 border-amber-200 text-xs font-medium transition cursor-pointer hover:border-amber-400"
-              title="Zepto, Blinkit & Impulsive spend insights"
-            >
-              <TrendingDown className="w-3.5 h-3.5 text-amber-600" />
-              <span className="hidden md:inline">Zepto Leak</span>
-            </button>
-
-            {/* Subscriptions */}
-            <button
-              onClick={onOpenSubscriptions}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-slate-700 text-xs font-medium transition cursor-pointer hover:text-[#0284C7]"
-              title="Track recurring OTT subscriptions"
-            >
-              <Tv className="w-3.5 h-3.5 text-[#0284C7]" />
-              <span className="hidden md:inline">Subs</span>
-            </button>
-
-            {/* CSV Statement Upload */}
-            <button
-              onClick={onOpenCsvUpload}
-              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-slate-700 text-xs font-medium transition cursor-pointer hover:text-[#0284C7]"
-              title="Import HDFC, ICICI, SBI or GPay CSV Statement"
-            >
-              <FileSpreadsheet className="w-3.5 h-3.5 text-cyan-600" />
-              <span className="hidden lg:inline">CSV</span>
-            </button>
-
-            {/* 9 PM Report */}
-            <button
-              onClick={onOpenNightlyReport}
-              className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer ${
-                isLive9PmTime || isOverspentToday
-                  ? 'bg-amber-50 border border-amber-300 text-amber-800 shadow-sm'
-                  : 'glass-pill text-slate-700 hover:text-[#0284C7]'
-              }`}
-            >
-              <Bell className="w-3.5 h-3.5 text-amber-600" />
-              <span className="hidden sm:inline">9 PM Report</span>
-              <span className="sm:hidden">9 PM</span>
-              {isOverspentToday && (
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping" />
-              )}
-            </button>
-
-            {/* Quick Add Button with Mint Cyan Gradient (Primary CTA) */}
-            <button
-              onClick={onOpenQuickAdd}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl btn-primary-mint text-white font-extrabold text-xs shadow-md transition transform active:scale-95 cursor-pointer"
-            >
-              <Plus className="w-4 h-4 stroke-[3]" />
-              <span>Log Spend</span>
-            </button>
-
-            {/* Settings & Salary */}
             <button
               onClick={onOpenSettings}
-              className="p-1.5 rounded-xl glass-pill text-slate-600 hover:text-[#0284C7] transition cursor-pointer"
-              title="Salary & Daily Budget Calculator Settings"
+              className="sm:hidden p-1.5 rounded-xl glass-pill text-slate-600 hover:text-[#0284C7] transition cursor-pointer"
+              title="Salary & Settings"
             >
               <Settings className="w-4 h-4 text-slate-600" />
             </button>
+
+            {/* Desktop Full Navigation Suite */}
+            <div className="hidden sm:flex items-center flex-wrap gap-2 justify-end">
+              {/* Desktop IST Time Pill */}
+              <div className="hidden xl:flex items-center gap-1.5 px-3 py-1.5 rounded-xl glass-pill text-xs font-mono text-slate-600">
+                <Clock className="w-3.5 h-3.5 text-cyan-600 animate-pulse" />
+                <span>{timeStr || 'IST'}</span>
+              </div>
+
+              {/* Bank Passbook & Account Vault Button */}
+              <button
+                onClick={onOpenBankPassbook}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-xl btn-secondary-ice text-xs font-semibold transition cursor-pointer shadow-sm hover:scale-105"
+                title="View bank ledger, all stored transactions, and real-time bank stream"
+              >
+                <div className="w-2 h-2 rounded-full bg-cyan-500 animate-ping" />
+                <Building2 className="w-3.5 h-3.5 text-[#0284C7]" />
+                <span className="font-bold text-[#0F172A]">{activeAccount ? activeAccount.bankName : 'Passbook'}</span>
+                <span className="text-cyan-700 font-mono text-[11px] font-bold">
+                  {formatINR(totalLiquidBalance)}
+                </span>
+              </button>
+
+              {/* Built-in AI Advisor */}
+              {onOpenAiAdvisor && (
+                <button
+                  onClick={onOpenAiAdvisor}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl btn-secondary-ice text-xs font-bold transition cursor-pointer shadow-sm hover:scale-105"
+                  title="Built-in AI Financial & World Copilot"
+                >
+                  <BrainCircuit className="w-3.5 h-3.5 text-[#0284C7] animate-pulse" />
+                  <span className="hidden md:inline">Finpulse AI</span>
+                  <span className="md:hidden">AI</span>
+                </button>
+              )}
+
+              {/* Bank Auto-Sync modal */}
+              <button
+                onClick={onOpenAutoBankSync}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-slate-700 text-xs font-medium transition cursor-pointer hover:text-[#0284C7]"
+                title="Automatically poll bank accounts & parse transactional SMS"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse" />
+                <span>Auto-Sync</span>
+              </button>
+
+              {/* Quick commerce & Impulsive insights */}
+              <button
+                onClick={onOpenMerchantInsights}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-amber-700 border-amber-200 text-xs font-medium transition cursor-pointer hover:border-amber-400"
+                title="Zepto, Blinkit & Impulsive spend insights"
+              >
+                <TrendingDown className="w-3.5 h-3.5 text-amber-600" />
+                <span className="hidden md:inline">Zepto Leak</span>
+              </button>
+
+              {/* Subscriptions */}
+              <button
+                onClick={onOpenSubscriptions}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-slate-700 text-xs font-medium transition cursor-pointer hover:text-[#0284C7]"
+                title="Track recurring OTT subscriptions"
+              >
+                <Tv className="w-3.5 h-3.5 text-[#0284C7]" />
+                <span className="hidden md:inline">Subs</span>
+              </button>
+
+              {/* CSV Statement Upload */}
+              <button
+                onClick={onOpenCsvUpload}
+                className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl glass-pill text-slate-700 text-xs font-medium transition cursor-pointer hover:text-[#0284C7]"
+                title="Import HDFC, ICICI, SBI or GPay CSV Statement"
+              >
+                <FileSpreadsheet className="w-3.5 h-3.5 text-cyan-600" />
+                <span className="hidden lg:inline">CSV</span>
+              </button>
+
+              {/* 9 PM Report */}
+              <button
+                onClick={onOpenNightlyReport}
+                className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium transition cursor-pointer ${
+                  isLive9PmTime || isOverspentToday
+                    ? 'bg-amber-50 border border-amber-300 text-amber-800 shadow-sm'
+                    : 'glass-pill text-slate-700 hover:text-[#0284C7]'
+                }`}
+              >
+                <Bell className="w-3.5 h-3.5 text-amber-600" />
+                <span>9 PM Report</span>
+                {isOverspentToday && (
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping" />
+                )}
+              </button>
+
+              {/* Quick Add Button with Mint Cyan Gradient (Primary CTA) */}
+              <button
+                onClick={onOpenQuickAdd}
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl btn-primary-mint text-white font-extrabold text-xs shadow-md transition transform active:scale-95 cursor-pointer"
+              >
+                <Plus className="w-4 h-4 stroke-[3]" />
+                <span>Log Spend</span>
+              </button>
+
+              {/* Settings & Salary */}
+              <button
+                onClick={onOpenSettings}
+                className="p-1.5 rounded-xl glass-pill text-slate-600 hover:text-[#0284C7] transition cursor-pointer"
+                title="Salary & Daily Budget Calculator Settings"
+              >
+                <Settings className="w-4 h-4 text-slate-600" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
